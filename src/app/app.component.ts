@@ -12,10 +12,7 @@ export class AppComponent {
     name: "Windstorm",
   };
 
-  selectedHero: Hero = {
-    id: 1,
-    name: "Windstorm",
-  };
+  selectedHero: Hero;
 
   heros: Hero[] = [
     { id: 11, name: "Mr. Nice" },
