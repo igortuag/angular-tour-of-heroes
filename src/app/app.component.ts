@@ -12,6 +12,11 @@ export class AppComponent {
     name: "Windstorm",
   };
 
+  selectedHero: Hero = {
+    id: 1,
+    name: "Windstorm",
+  };
+
   heros: Hero[] = [
     { id: 11, name: "Mr. Nice" },
     { id: 12, name: "Narco" },
@@ -24,6 +29,10 @@ export class AppComponent {
     { id: 19, name: "Magma" },
     { id: 20, name: "Tornado" },
   ];
+
+  onSelectHero(hero: Hero) {
+    this.selectedHero = hero;
+  }
 }
 
 export class Hero {
