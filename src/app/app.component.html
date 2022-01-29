@@ -7,3 +7,10 @@
   <label>name: </label>
   <input [(ngModel)]="hero.name" />
 </div>
+
+<h2>My heros</h2>
+<div class="heros">
+  <li *ngFor="let hero of heros">
+    <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+  </li>
+</div>
