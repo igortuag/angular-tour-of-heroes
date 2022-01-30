@@ -1,5 +1,5 @@
 import { HeroService } from './hero.service';
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Hero } from './hero-detail/hero';
 
 @Component({
@@ -7,7 +7,7 @@ import { Hero } from './hero-detail/hero';
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = "Tour of heroes";
   hero: Hero = {
     id: 1,
@@ -18,10 +18,14 @@ export class AppComponent {
 
   selectedHero: Hero;
 
-  heros: Hero[] = this.heroService.getHeroes();
+  heros: Hero[]
 
   onSelectHero(hero: Hero) {
     this.selectedHero = hero;
+  }
+
+  ngOnInit() {
+    this.heros = this.heroService.getHeroes();
   }
 }
 
